@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+package stocktrading;
+option java_multiple_files=true;
+option java_package="com.fwu.ns.grpc";
+option java_outer_classname="StockTradingProto";
+
+service StockTradingService{
+
+  // bidirectional streaming - live trading.
+  rpc liveTrading(stream StockOrder) returns (stream TradeStatus);
+}
+
+message StockOrder{
+  string order_id=1;
+  string stock_symbol=2;
+  int32 quantity=3;
+  double price=4;
+  string order_type=5;
+}
+
+message TradeStatus{
+  string order_id=1;
+  string status=2;  // execute, failed , pending
+  string message=3;  // reason if failed or success message
+  string timestamp=4;
+}

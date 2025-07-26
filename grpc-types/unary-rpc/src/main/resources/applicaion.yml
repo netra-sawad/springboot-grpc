@@ -1,0 +1,5 @@
+grpc:
+  server:
+    port: 9090
+    enable-reflection: true
+# this allows the servers can be accessed from the postman
