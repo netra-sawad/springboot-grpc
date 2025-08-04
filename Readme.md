@@ -1,6 +1,4 @@
 ## GRPC
-
----
 <p align="center">
     <em>gRPC is a modern open-source Remote Procedure Call (RPC) framework developed by Google. It uses HTTP/2 for transport, Protocol Buffers (protobuf) for serialization, and supports multiple programming languages.
 
@@ -50,8 +48,6 @@ string name = 2;
 
 ## Basic Java ↔ Proto Type Mapping
 
----
-
 | Java Type | Protobuf Type |
 | --------- |----------|
 | `int`     | `int32`  |
@@ -64,8 +60,6 @@ string name = 2;
 
 
 ## Data Example: JSON vs Protobuf Format
-
----
 JSON Request/Response
 
 ```console
@@ -80,8 +74,8 @@ JSON Request/Response
     }
   ],
   "address_map": {
-    "home": "13 Main St, Kathmandu",
-    "office": "34 Main St, Kathmandu"
+    "home": "13 Main St., Kathmandu",
+    "office": "34 Main St., Kathmandu"
   },
   "isActive": true,
   "profile_picture": "jkdfjklfjhdsjfhdkjhfd",

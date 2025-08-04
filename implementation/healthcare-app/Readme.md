@@ -16,7 +16,13 @@ grpcui -plaintext localhost:9090
   "address": "123 Main St KTM"
 }' localhost:9090 com.ns.fwu.patient.PatientService/RegisterPatient
 ```
-//com.ns.fwu.healthcare.service
+
+## Get Patient
+```bash
+grpcurl -plaintext -d '{
+ "patient_id": "1"
+}' localhost:9090 com.ns.fwu.patient.PatientService/GetPatientDetails
+```
 ## Register Doctor
 ```bash
   grpcurl -plaintext -d '{
