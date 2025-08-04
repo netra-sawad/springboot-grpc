@@ -5,7 +5,11 @@
 ```bash
 grpcui -plaintext localhost:9090
 ```
-
+---
+### List service
+```bash
+grpcurl -plaintext localhost:9090 list
+```
 ## Register Patient
 ```bash
   grpcurl -plaintext -d '{
@@ -23,6 +27,12 @@ grpcurl -plaintext -d '{
  "patient_id": "1"
 }' localhost:9090 com.ns.fwu.patient.PatientService/GetPatientDetails
 ```
+
+---
+### List Services
+```bash
+grpcurl -plaintext localhost:9090 list
+```
 ## Register Doctor
 ```bash
   grpcurl -plaintext -d '{
@@ -30,12 +40,30 @@ grpcurl -plaintext -d '{
   "last_name": "Thomas",
   "email": "harry@gmail.com",
   "phone": "123-456-7890",
-  "specialty": "Cardiology",
+  "speciality": "Cardiology",
   "centre_name": "Health Centre",
   "location": "Kathmandu"
 }' localhost:9091 com.ns.fwu.doctor.DoctorService/RegisterDoctor
 ```
 
+## Get Doctor
+```bash
+grpcurl -plaintext -d '{
+"doctor_id": "1"
+}' localhost:9091 com.ns.fwu.doctor.DoctorService/GetDoctorDetails
+```
+---
+### List service
+```bash
+grpcurl -plaintext localhost:9092 list
+```
+
+## Get Appointment Availability
+```bash
+grpcurl -plaintext -d '{
+  "doctor_id": 1
+}' localhost:9092 com.ns.fwu.appointment.AppointmentService/GetAppointmentAvailable
+```
 ## Book Appointment 
 ```bash
 grpcurl -plaintext -d '{
